@@ -1,0 +1,23 @@
+{
+  "name": "dsomw",
+  "version": "1.0.0",
+  "description": "本项目是一个基于智能合约和React前端的去中心化学生社团组织治理网站。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PLZ2001/DSOMW.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PLZ2001/DSOMW/issues"
+  },
+  "homepage": "https://github.com/PLZ2001/DSOMW#readme",
+  "devDependencies": {
+    "hardhat": "^2.12.0"
+  }
+}
