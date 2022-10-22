@@ -18,6 +18,12 @@
   },
   "homepage": "https://github.com/PLZ2001/DSOMW#readme",
   "devDependencies": {
-    "hardhat": "^2.12.0"
+    "hardhat": "^2.12.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@openzeppelin/contracts": "^4.7.3"
   }
 }
