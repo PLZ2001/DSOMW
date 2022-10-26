@@ -4,27 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="引入ERC20和ERC721，补充了领取通证积分和获取纪念品的方法">
-      <change afterPath="$PROJECT_DIR$/contracts/contracts/DSOMW.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contracts/test/DSOMW.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/DSOMW.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC20.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/contracts.ts" afterDir="false" />
+    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="后端solidity代码基本完善；初步设计简单的前端">
+      <change afterPath="$PROJECT_DIR$/contracts/contracts/StringHelper.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC721.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/contracts/Lock.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/contracts/DSOMW.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/contracts/DSOMW.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/contracts/MyERC20.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/contracts/MyERC20.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/contracts/MyERC721.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/contracts/MyERC721.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/hardhat.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/hardhat.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/scripts/deploy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/scripts/deploy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/test/Lock.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/test/DSOMW.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsomw-fronted/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/DSOMW.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/DSOMW.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC20.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC20.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/contracts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/contracts.ts" afterDir="false" />
     </list>
-    <list id="00bdb701-7308-4c30-9ad7-fd0adde5db8b" name="no" comment="no" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,9 +30,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -60,7 +56,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/文件/Ethereum/Dapp大作业/DSOMW/dsomw-fronted/src/utils/abis&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/文件/Ethereum/Dapp大作业/DSOMW/contracts/contracts&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
@@ -69,11 +65,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\文件\Ethereum\Dapp大作业\DSOMW\dsomw-fronted\src\utils\abis" />
       <recent name="D:\文件\Ethereum\Dapp大作业\DSOMW\contracts\contracts" />
+      <recent name="D:\文件\Ethereum\Dapp大作业\DSOMW\dsomw-fronted\src\utils\abis" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.compile">
+  <component name="RunManager" selected="Shell Script.deploy">
     <configuration name="compile" type="ShConfigurationType">
       <option name="SCRIPT_TEXT" value="npx hardhat compile" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -145,7 +141,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="" />
-      <changelist id="00bdb701-7308-4c30-9ad7-fd0adde5db8b" name="no" comment="" />
       <created>1666429761088</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -153,7 +148,13 @@
       <workItem from="1666429764409" duration="11023000" />
       <workItem from="1666488075932" duration="17693000" />
       <workItem from="1666532980937" duration="7325000" />
-      <workItem from="1666573592517" duration="14408000" />
+      <workItem from="1666573592517" duration="15946000" />
+      <workItem from="1666596941822" duration="5643000" />
+      <workItem from="1666608683453" duration="7627000" />
+      <workItem from="1666618509056" duration="2287000" />
+      <workItem from="1666664186076" duration="5241000" />
+      <workItem from="1666746458948" duration="26675000" />
+      <workItem from="1666788858036" duration="1157000" />
     </task>
     <task id="LOCAL-00001" summary="生成hardhat工程模板">
       <created>1666430140103</created>
@@ -183,11 +184,79 @@
       <option name="project" value="LOCAL" />
       <updated>1666443527162</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="后端solidity代码基本完善；初步设计简单的前端">
+      <created>1666595768710</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666595768710</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/utils/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC20/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC20/ERC20__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC20/IERC20__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC721/ERC721__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC721/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC721/IERC721__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC721/IERC721Receiver__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/utils/introspection/IERC165__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/utils/introspection/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/utils/introspection/ERC165__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC20/extensions/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC721/extensions/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/contracts/MyERC721.sol/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/contracts/MyERC721.sol/GameItem.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/contracts/MyERC721.sol/MyERC721.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/contracts/DSOMW__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/contracts/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/contracts/MyERC20__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/contracts/MyERC721__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/contracts/MyERC721.sol/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/contracts/MyERC721.sol/MyERC721__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/factories/contracts/MyERC721.sol/GameItem__factory.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/contracts/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/contracts/DSOMW.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/contracts/MyERC20.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/contracts/MyERC721.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/utils/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC20/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC20/IERC20.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC20/ERC20.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC721/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC721/ERC721.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC721/IERC721Receiver.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC721/IERC721.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/utils/introspection/IERC165.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/utils/introspection/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/utils/introspection/ERC165.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC20/extensions/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC721/extensions/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/index.js" />
+        <option value="$PROJECT_DIR$/contracts/typechain-types/common.js" />
+        <option value="$PROJECT_DIR$/contracts/hardhat.config.js" />
+        <option value="$PROJECT_DIR$/contracts/scripts/deploy.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -203,6 +272,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="生成hardhat工程模板" />
     <MESSAGE value="引入ERC20和ERC721，补充了领取通证积分和获取纪念品的方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="引入ERC20和ERC721，补充了领取通证积分和获取纪念品的方法" />
+    <MESSAGE value="后端solidity代码基本完善" />
+    <MESSAGE value="后端solidity代码基本完善；初步设计简单的前端" />
+    <option name="LAST_COMMIT_MESSAGE" value="后端solidity代码基本完善；初步设计简单的前端" />
   </component>
 </project>

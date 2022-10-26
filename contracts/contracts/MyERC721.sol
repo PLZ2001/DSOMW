@@ -5,9 +5,11 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 // MyERC721合约的所有对外函数
-// 1. 获取某用户的所有bonus信息
+// 1. 获取用户的所有bonus信息
 //    function getBonusInformation(address user) public view returns (uint[] memory, string[] memory, uint[] memory)
-// 2. 继承于ERC721合约的所有对外函数（略）
+// 2. 获取用户是否可以获取某种TokenURI的bonus
+//    function getWhetherUserCanGetBonusReward(address user, string memory tokenURI) public view returns (bool)
+// 3. 继承于ERC721合约的所有对外函数（略）
 
 contract MyERC721 is ERC721URIStorage {
     using Counters for Counters.Counter;
@@ -28,6 +30,8 @@ contract MyERC721 is ERC721URIStorage {
     }
 
     Bonuses private _bonuses;
+    mapping(string => mapping(address => bool)) claimedGetBonusUserList; //已经领取指定TokenURI的用户名单
+
 
     constructor(string memory name, string memory symbol) ERC721(name, symbol) {
         manager = msg.sender; // DSOMW合约即管理员
@@ -36,7 +40,9 @@ contract MyERC721 is ERC721URIStorage {
     // 给某用户发纪念品
     function awardItem(address user, string memory tokenURI) public {
         require(msg.sender == manager, "Only system can access awardItem function.");
+        require(claimedGetBonusUserList[tokenURI][msg.sender] == false, "You have got this kind of bonus already");
 
+        claimedGetBonusUserList[tokenURI][user] = true;
         // 由计数器获取现在最新的id
         uint256 newItemId = _tokenIds.current();
         // 给对应地址发对应的NFT
@@ -51,21 +57,23 @@ contract MyERC721 is ERC721URIStorage {
         _bonuses.getBonusWithAddress[user].push(newBonus);
     }
 
-    // 获取某用户的所有bonus信息
+    // 获取用户的所有bonus信息
     function getBonusInformation(address user) public view returns (uint[] memory, string[] memory, uint[] memory) {
-        uint[] memory itemId;
-        string[] memory tokenURI;
-        uint[] memory awardTime;
-        uint cnt = 0;
         uint i;
         Bonus[] memory userBonuses = _bonuses.getBonusWithAddress[user];
+        uint[] memory itemId = new uint[](userBonuses.length);
+        string[] memory tokenURI = new string[](userBonuses.length);
+        uint[] memory awardTime = new uint[](userBonuses.length);
         for (i = 0; i < userBonuses.length; i++) {
-            itemId[cnt] = userBonuses[i].itemId;
-            tokenURI[cnt] = userBonuses[i].tokenURI;
-            awardTime[cnt] = userBonuses[i].awardTime;
-            cnt++;
+            itemId[i] = userBonuses[i].itemId;
+            tokenURI[i] = userBonuses[i].tokenURI;
+            awardTime[i] = userBonuses[i].awardTime;
         }
-
         return (itemId, tokenURI, awardTime);
+    }
+
+    // 获取用户是否可以获取某种TokenURI的bonus
+    function getWhetherUserCanGetBonusReward(address user, string memory tokenURI) public view returns (bool) {
+        return !claimedGetBonusUserList[tokenURI][user];
     }
 }
