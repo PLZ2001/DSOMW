@@ -9,7 +9,7 @@ import "./StringHelper.sol";
 // DSOMW合约的所有对外函数
 // **提案**
 // 1. 发起一个新提案
-//    function addNewProposal(string calldata content) public
+//    function addNewProposal(string calldata content, uint startTime, uint endTime) public
 // 2. 获取所有提案的id
 //    function getProposalIds() public view returns (uint[] memory)
 // 3. 获取用户的所有提案的id
@@ -52,6 +52,7 @@ contract DSOMW {
         uint id; // 提案id
         string content; // 提案内容
         address proposer; // 提案发起人
+        uint voteStartTime; // 提案投票开始时间
         uint voteEndTime; // 提案投票结束时间
         bool isTpRewardGotten; // 用来表示通证积分奖励是否已经被领取
         bool isValid; // 用来表示该提案是否存在，防止读取不存在的提案
@@ -67,7 +68,8 @@ contract DSOMW {
     enum ProposalStatus {
         isBeingVotedOn, // 正在投票中
         isRejected, // 投票已结束，拒绝
-        isApproved // 投票已结束，通过
+        isApproved, // 投票已结束，通过
+        notStartYet // 投票还没开始
     }
 
     // 一个投票
@@ -105,7 +107,9 @@ contract DSOMW {
     }
 
     // 发起一个新提案
-    function addNewProposal(string calldata content, uint votingTime) public {
+    function addNewProposal(string calldata content, uint startTime, uint endTime) public {
+        require(startTime<endTime, "StartTime must be less than endTime.");
+        require(endTime>block.timestamp, "EndTime must be time in the future.");
         require(TP.balanceOf(msg.sender) >= _proposals.tpConsumedByProposal, "Unable to afford a new proposal.");
         require(TP.allowance(msg.sender, address(this)) >= _proposals.tpConsumedByProposal, "DSOMW don't have allowance over your TP. Please authorize DSOMW.");
 
@@ -115,7 +119,8 @@ contract DSOMW {
         Proposal memory newProposal = Proposal({id:newId, // 提案id
                                          content:content, // 提案内容
                                          proposer:msg.sender, // 提案发起人
-                                         voteEndTime:block.timestamp+votingTime, // 提案投票结束时间
+                                         voteStartTime:startTime, // 提案投票开始时间
+                                         voteEndTime:endTime, // 提案投票结束时间
                                          isTpRewardGotten:false,
                                          isValid:true}); // 用来表示该提案是否存在，防止读取不存在的提案
         _proposals.getProposalWithId[newId] = newProposal; // 添加一个提案
@@ -164,15 +169,16 @@ contract DSOMW {
     }
 
     // 获取提案信息
-    function getProposalInformation(uint id, uint timeNow) public view returns (string memory, address, uint, uint) {
+    function getProposalInformation(uint id, uint timeNow) public view returns (string memory, address, uint, uint, uint) {
         require(_proposals.getProposalWithId[id].isValid == true, "This proposal doesn't exist.");
 
         uint status = uint(getProposalStatus(id, timeNow));
         string memory content = _proposals.getProposalWithId[id].content;
         address proposer = _proposals.getProposalWithId[id].proposer;
+        uint voteStartTime = _proposals.getProposalWithId[id].voteStartTime;
         uint voteEndTime = _proposals.getProposalWithId[id].voteEndTime;
 
-        return (content, proposer, voteEndTime, status);
+        return (content, proposer, voteStartTime, voteEndTime, status);
     }
 
     // 获取发布提案需要消耗的通证积分TP
@@ -210,8 +216,13 @@ contract DSOMW {
                 return ProposalStatus.isRejected;
             }
         } else {
-            // 提案正在投票
-            return ProposalStatus.isBeingVotedOn;
+            if (block.timestamp < _proposals.getProposalWithId[id].voteStartTime) {
+                // 提案投票还没开始
+                return ProposalStatus.notStartYet;
+            } else {
+                // 提案正在投票
+                return ProposalStatus.isBeingVotedOn;
+            }
         }
     }
 
@@ -245,8 +256,13 @@ contract DSOMW {
                 return ProposalStatus.isRejected;
             }
         } else {
-            // 提案正在投票
-            return ProposalStatus.isBeingVotedOn;
+            if (timeNow < _proposals.getProposalWithId[id].voteStartTime) {
+                // 提案投票还没开始
+                return ProposalStatus.notStartYet;
+            } else {
+                // 提案正在投票
+                return ProposalStatus.isBeingVotedOn;
+            }
         }
     }
 

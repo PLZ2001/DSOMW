@@ -25,6 +25,7 @@
   "dependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
     "@openzeppelin/contracts": "^4.7.3",
+    "date-fns": "^2.29.3",
     "web3": "^1.8.0"
   }
 }

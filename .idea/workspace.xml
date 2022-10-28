@@ -4,22 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="后端solidity代码基本完善；初步设计简单的前端">
-      <change afterPath="$PROJECT_DIR$/contracts/contracts/StringHelper.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC721.json" afterDir="false" />
+    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="后端solidity代码更进一步完善；前端功能更进一步完善，可以准备美化了">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/contracts/DSOMW.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/contracts/DSOMW.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/contracts/MyERC20.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/contracts/MyERC20.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/contracts/MyERC721.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/contracts/MyERC721.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/hardhat.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/hardhat.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/scripts/deploy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/scripts/deploy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/test/DSOMW.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsomw-fronted/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsomw-fronted/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsomw-fronted/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.css" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/DSOMW.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/DSOMW.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC20.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC20.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC721.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC721.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/contracts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/contracts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,20 +55,20 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/文件/Ethereum/Dapp大作业/DSOMW/contracts/contracts&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/文件/Ethereum/Dapp大作业/DSOMW/dsomw-fronted/src/utils/abis&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\文件\\Ethereum\\Dapp大作业\\DSOMW\\node_modules\\typescript\\lib&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\文件\Ethereum\Dapp大作业\DSOMW\contracts\contracts" />
       <recent name="D:\文件\Ethereum\Dapp大作业\DSOMW\dsomw-fronted\src\utils\abis" />
+      <recent name="D:\文件\Ethereum\Dapp大作业\DSOMW\contracts\contracts" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.deploy">
+  <component name="RunManager" selected="Shell Script.react start">
     <configuration name="compile" type="ShConfigurationType">
       <option name="SCRIPT_TEXT" value="npx hardhat compile" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -154,7 +153,10 @@
       <workItem from="1666618509056" duration="2287000" />
       <workItem from="1666664186076" duration="5241000" />
       <workItem from="1666746458948" duration="26675000" />
-      <workItem from="1666788858036" duration="1157000" />
+      <workItem from="1666788858036" duration="7909000" />
+      <workItem from="1666835059312" duration="37871000" />
+      <workItem from="1666919642266" duration="3300000" />
+      <workItem from="1666925890491" duration="267000" />
     </task>
     <task id="LOCAL-00001" summary="生成hardhat工程模板">
       <created>1666430140103</created>
@@ -191,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666595768710</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="后端solidity代码更进一步完善；前端功能更进一步完善，可以准备美化了">
+      <created>1666790058454</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666790058454</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +283,7 @@
     <MESSAGE value="引入ERC20和ERC721，补充了领取通证积分和获取纪念品的方法" />
     <MESSAGE value="后端solidity代码基本完善" />
     <MESSAGE value="后端solidity代码基本完善；初步设计简单的前端" />
-    <option name="LAST_COMMIT_MESSAGE" value="后端solidity代码基本完善；初步设计简单的前端" />
+    <MESSAGE value="后端solidity代码更进一步完善；前端功能更进一步完善，可以准备美化了" />
+    <option name="LAST_COMMIT_MESSAGE" value="后端solidity代码更进一步完善；前端功能更进一步完善，可以准备美化了" />
   </component>
 </project>

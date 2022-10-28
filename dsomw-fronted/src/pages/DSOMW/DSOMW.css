@@ -1,3 +1,49 @@
+@import '~antd/dist/antd.css';
+
 .DSOMW {
     text-align: center;
+}
+
+.logo {
+    height: 32px;
+    margin: 16px;
+    color: dodgerblue;
+    text-align: center;
+    font-family:微软雅黑;
+    font-size: x-large;
+}
+
+.header {
+    height: 100px;
+    margin: 16px;
+    color: dodgerblue;
+    text-align: center;
+    font-family:微软雅黑;
+    font-size: large;
+    background: white;
+    line-height: 24px;
+}
+
+.toolBar {
+    height: 32px;
+    margin: 0px;
+    color: dodgerblue;
+    text-align: center;
+    font-family:微软雅黑;
+    font-size: medium;
+    background: white;
+}
+
+.userBar {
+    margin: 0px;
+    color: dodgerblue;
+    text-align: center;
+    font-family:微软雅黑;
+    font-size: x-large;
+    background: white;
+    line-height: 64px;
+}
+
+.site-layout {
+    background: #F0F2F5;
 }

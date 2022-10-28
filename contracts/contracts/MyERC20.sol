@@ -8,7 +8,9 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 //    function getInitialUserTp() public view returns (uint)
 // 2. 每个用户仅有一次领取通证积分TP的机会
 //    function getTP() public
-// 3. 继承于ERC20合约的所有对外函数（略）
+// 3. 获取用户是否可以领取初始通证积分
+//    function getWhetherUserCanGetInitialUserTp() public view returns (bool)
+// 4. 继承于ERC20合约的所有对外函数（略）
 
 contract MyERC20 is ERC20 {
 
@@ -31,6 +33,10 @@ contract MyERC20 is ERC20 {
         claimedGetTpUserList[msg.sender] = true;
         // 领取
         _mint(msg.sender, _initialUserTp);
+    }
 
+    // 获取用户是否可以领取初始通证积分
+    function getWhetherUserCanGetInitialUserTp() public view returns (bool) {
+        return !claimedGetTpUserList[msg.sender];
     }
 }
