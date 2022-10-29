@@ -22,8 +22,8 @@ import {
 } from '@ant-design/icons';
 import type { RangePickerProps } from 'antd/es/date-picker';
 import type { MenuProps } from 'antd';
-import type { ColumnsType, TableProps } from 'antd/es/table';
-import { Layout, Menu, Row, Col, Button, Table, Empty, Tag, Tabs, Divider, Alert, Modal, Input, TimePicker, DatePicker} from 'antd';
+import type { ColumnsType } from 'antd/es/table';
+import { Layout, Menu, Row, Col, Button, Table, Empty, Tag, Tabs, Divider, Alert, Modal, Input, DatePicker,Popconfirm} from 'antd';
 
 //安装npm i date-fns --save
 import format from 'date-fns/format'; // 时间格式化字符串
@@ -141,7 +141,7 @@ const DSOMWPage = () => {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     useEffect(() => {
@@ -160,7 +160,7 @@ const DSOMWPage = () => {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     useEffect(() => {
@@ -192,7 +192,7 @@ const DSOMWPage = () => {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     useEffect(() => {
@@ -211,7 +211,7 @@ const DSOMWPage = () => {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     useEffect(() => {
@@ -230,7 +230,7 @@ const DSOMWPage = () => {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     useEffect(() => {
@@ -249,7 +249,7 @@ const DSOMWPage = () => {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     useEffect(() => {
@@ -268,7 +268,7 @@ const DSOMWPage = () => {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     useEffect(() => {
@@ -280,7 +280,7 @@ const DSOMWPage = () => {
     // 手动：领取通证积分TP
     const getTP = async () => {
         if(account === '') {
-            setErrorMessage('You have not connected wallet yet.')
+            setErrorMessage('你尚未连接钱包！')
             return
         }
         if (myERC20Contract) {
@@ -288,18 +288,18 @@ const DSOMWPage = () => {
                 await myERC20Contract.methods.getTP().send({from: account})
                 getUserInfo()
                 getProposalInfo()
-                setSuccessMessage('You have Token Point now.')
+                setSuccessMessage('成功领取初始通证积分。')
             } catch (error: any) {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     // 手动：领取纪念品
     const getBonusReward = async () => {
         if(account === '') {
-            setErrorMessage('You have not connected wallet yet.')
+            setErrorMessage('你尚未连接钱包！')
             return
         }
         if (DSOMWContract && myERC721Contract) {
@@ -307,18 +307,18 @@ const DSOMWPage = () => {
                 await DSOMWContract.methods.getBonusReward().send({from: account})
                 getUserInfo()
                 getProposalInfo()
-                setSuccessMessage('Congratulations! You get your Bonus reward for your contribution to organization.')
+                setSuccessMessage('祝贺你！你得到了社团赠予的纪念品。')
             } catch (error: any) {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     // 手动：领取通证积分奖励
     const getTpRewardFromProposalApproved = async (id:number) => {
         if(account === '') {
-            setErrorMessage('You have not connected wallet yet.')
+            setErrorMessage('你尚未连接钱包！')
             return
         }
         if (DSOMWContract && myERC20Contract) {
@@ -326,18 +326,18 @@ const DSOMWPage = () => {
                 await DSOMWContract.methods.getTpRewardFromProposalApproved(id).send({from: account})
                 getUserInfo()
                 getProposalInfo()
-                setSuccessMessage('Congratulations! You get your TP reward from this proposal for approval.')
+                setSuccessMessage('祝贺你！你因为提案通过得到了通证积分TP奖励')
             } catch (error: any) {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     // 手动：发起提案
     const addNewProposal = async (content:string, startTime: number, endTime: number) => {
         if(account === '') {
-            setErrorMessage('You have not connected wallet yet.')
+            setErrorMessage('你尚未连接钱包！')
             return
         }
         if (DSOMWContract && myERC20Contract) {
@@ -346,20 +346,20 @@ const DSOMWPage = () => {
                 await DSOMWContract.methods.addNewProposal(content,startTime,endTime).send({from: account})
                 getUserInfo()
                 getProposalInfo()
-                setSuccessMessage('You add a new proposal.')
+                setSuccessMessage('你成功发布了一项提案。')
                 setSubmit(true)
                 _proposalContent = "";
             } catch (error: any) {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
     // 手动：投票
     const voteOnProposal = async (behavior:number, id:number) => {
         if(account === '') {
-            setErrorMessage('You have not connected wallet yet.')
+            setErrorMessage('你尚未连接钱包！')
             return
         }
         if (DSOMWContract && myERC20Contract) {
@@ -369,16 +369,16 @@ const DSOMWPage = () => {
                 getUserInfo()
                 getProposalInfo()
                 if (behavior == 1) {
-                    setSuccessMessage('You vote on a proposal. Remember that you have a total of '+maxVotingTimes+' chances to re-vote.')
+                    setSuccessMessage('你成功投出了赞成票。请记住，你一共有 '+maxVotingTimes+' 次投票机会。')
                 } else {
-                    setSuccessMessage('You vote against a proposal. Remember that you have a total of '+maxVotingTimes+' chances to re-vote.')
+                    setSuccessMessage('你成功投出了反对票。请记住，你一共有 '+maxVotingTimes+' 次投票机会。')
                 }
 
             } catch (error: any) {
                 revertOutput(error)
             }
         } else {
-            setErrorMessage('Contract not exists.')
+            setErrorMessage('合约不存在！')
         }
     }
 
@@ -397,11 +397,14 @@ const DSOMWPage = () => {
         label: value.label,
     }));
 
+    // 用户颜色
+    const colorGroup = ["red","gold","green","cyan","magenta","orange","lime","geekblue","volcano","purple"]
+
     // 表格数据
     const [allProposalData, setAllProposalData] = useState([] as { id: number; voteStartTime: string;voteEndTime: string; content: string; proposer: JSX.Element; votesInfo: string; status: JSX.Element; action: JSX.Element; }[])
-    const [userProposalData, setUserProposalData] = useState([] as { id: number;voteStartTime: string; voteEndTime: string; content: string; proposer: JSX.Element; votesInfo: string; status: JSX.Element; action: JSX.Element; }[])
-    const [userProposalVoteData, setUserProposalVoteData] = useState([] as { id: number; voteTime:string;voter: JSX.Element;behavior:string;}[])
-    const [userVoteData, setUserVoteData] = useState([] as {behavior:string,voteTime:string,proposalIdVotedOn:number}[])
+    const [userProposalData, setUserProposalData] = useState([] as { id: number;voteStartTime: string; voteEndTime: string; content: string; votesInfo: JSX.Element; status: JSX.Element; action: JSX.Element; }[])
+    const [userProposalVoteData, setUserProposalVoteData] = useState([] as {id: number;voteTime:string;voter: JSX.Element;behavior:string;}[])
+    const [userVoteData, setUserVoteData] = useState([] as {behavior:string,voteTime:string,proposalIdVotedOn:number,content:string}[])
     const [userBonusData, setUserBonusData] = useState([] as {id:string,URI:string,awardTime:string}[])
     useEffect(()=>{
         if (account !== '' && proposalsInfo) {
@@ -409,11 +412,19 @@ const DSOMWPage = () => {
                 setAllProposalData(proposalsInfo.map((item)=>{
                     let button_action!:JSX.Element;
                     if (item.status == 0) {
-                        button_action = <div><Button icon={<CheckSquareOutlined />} onClick={(e)=>voteOnProposal(1,item.id)}>赞成</Button><Button icon={<CloseSquareOutlined />} onClick={(e)=>voteOnProposal(0,item.id)}>反对</Button></div>;
+                        button_action =
+                            <div>
+                                <Popconfirm title={"投票将消耗"+tpConsumedByVote+" TP。你目前有"+userInfo.balance+" TP。是否确定继续？"} onConfirm={(e)=>voteOnProposal(1,item.id)} okText="确定" cancelText="取消" placement="leftTop">
+                                    <Button icon={<CheckSquareOutlined />}>赞成</Button>
+                                </Popconfirm>
+                                <Popconfirm title={"投票将消耗"+tpConsumedByVote+" TP。你目前有"+userInfo.balance+" TP。是否确定继续？"} onConfirm={(e)=>voteOnProposal(0,item.id)} okText="确定" cancelText="取消" placement="leftTop">
+                                    <Button icon={<CloseSquareOutlined />}>反对</Button>
+                                </Popconfirm>
+                            </div>;
                     } else if (item.status == 2 && item.getTpReward==true) {
                         button_action = <Button icon={<DollarCircleOutlined />} onClick={(e)=>getTpRewardFromProposalApproved(item.id)}>领取通证积分TP奖励</Button>;
                     }
-                    return {id:item.id,voteStartTime:getDate(item.voteStartTime),voteEndTime:getDate(item.voteEndTime),content:item.content,proposer:<Tag icon={<UserOutlined/>}>{item.proposer}</Tag>,votesInfo: item.votesInfo.filter((item)=>{return item.behavior===1}).length+"/"+item.votesInfo.filter((item)=>{return item.behavior===0}).length,status: (item.status===0?<Tag color="processing">正在投票中</Tag>:(item.status===1?<Tag color="error">已拒绝</Tag>:(item.status===2?<Tag color="success">已通过</Tag>:<Tag color="warning">投票尚未开始</Tag>))),action: button_action}
+                    return {id:item.id,voteStartTime:getDate(item.voteStartTime),voteEndTime:getDate(item.voteEndTime),content:item.content,proposer:<Tag icon={<UserOutlined/>} color={item.proposer == account?"blue":(colorGroup[userAddresses.indexOf(item.proposer)%10])}>{item.proposer}</Tag>,votesInfo: item.votesInfo.filter((item)=>{return item.behavior===1}).length+"/"+item.votesInfo.filter((item)=>{return item.behavior===0}).length,status: (item.status===0?<Tag color="processing">正在投票中</Tag>:(item.status===1?<Tag color="error">已拒绝</Tag>:(item.status===2?<Tag color="success">已通过</Tag>:<Tag color="warning">投票尚未开始</Tag>))),action: button_action}
                 }))
             } catch (error: any) {
                 revertOutput(error)
@@ -426,11 +437,19 @@ const DSOMWPage = () => {
                 const _allProposaldata = proposalsInfo.map((item)=>{
                     let button_action!:JSX.Element;
                     if (item.status == 0) {
-                        button_action = <div><Button icon={<CheckSquareOutlined />} onClick={(e)=>voteOnProposal(1,item.id)}>赞成</Button><Button icon={<CloseSquareOutlined />} onClick={(e)=>voteOnProposal(0,item.id)}>反对</Button></div>;
+                        button_action =
+                            <div>
+                                <Popconfirm title={"投票将消耗"+tpConsumedByVote+" TP。你目前有"+userInfo.balance+" TP。是否确定继续？"} onConfirm={(e)=>voteOnProposal(1,item.id)} okText="确定" cancelText="取消" placement="leftTop">
+                                    <Button icon={<CheckSquareOutlined />}>赞成</Button>
+                                </Popconfirm>
+                                <Popconfirm title={"投票将消耗"+tpConsumedByVote+" TP。你目前有"+userInfo.balance+" TP。是否确定继续？"} onConfirm={(e)=>voteOnProposal(0,item.id)} okText="确定" cancelText="取消" placement="leftTop">
+                                    <Button icon={<CloseSquareOutlined />}>反对</Button>
+                                </Popconfirm>
+                            </div>;
                     } else if (item.status == 2 && item.getTpReward==true) {
                         button_action = <Button icon={<DollarCircleOutlined />} onClick={(e)=>getTpRewardFromProposalApproved(item.id)}>领取通证积分TP奖励</Button>;
                     }
-                    return {id:item.id,voteStartTime:getDate(item.voteStartTime),voteEndTime:getDate(item.voteEndTime),content:item.content,proposer:<Tag icon={<UserOutlined/>}>{item.proposer}</Tag>,votesInfo: item.votesInfo.filter((item)=>{return item.behavior===1}).length+"/"+item.votesInfo.filter((item)=>{return item.behavior===0}).length,status: (item.status===0?<Tag color="processing">正在投票中</Tag>:(item.status===1?<Tag color="error">已拒绝</Tag>:(item.status===2?<Tag color="success">已通过</Tag>:<Tag color="warning">投票尚未开始</Tag>))),action: button_action}
+                    return {id:item.id,voteStartTime:getDate(item.voteStartTime),voteEndTime:getDate(item.voteEndTime),content:item.content,votesInfo: <Button type="link" onClick={(e)=>info(item.id)}>{item.votesInfo.filter((item)=>{return item.behavior===1}).length+"/"+item.votesInfo.filter((item)=>{return item.behavior===0}).length}</Button>,status: (item.status===0?<Tag color="processing">正在投票中</Tag>:(item.status===1?<Tag color="error">已拒绝</Tag>:(item.status===2?<Tag color="success">已通过</Tag>:<Tag color="warning">投票尚未开始</Tag>))),action: button_action}
                 })
                 setUserProposalData(_allProposaldata.filter((item)=>{
                     return userInfo.proposalIds.some((id)=>{
@@ -461,7 +480,7 @@ const DSOMWPage = () => {
                 let _userProposalVoteData = [] as { id: number; voteTime:string;voter: JSX.Element;behavior:string;}[]
                 _userProposaldata.forEach((item,index,array)=>{
                     item.votesInfo.forEach((_item)=>{
-                        _userProposalVoteData.push({id:item.id,voteTime:getDate(_item.voteTime),voter:<Tag icon={<UserOutlined/>}>{_item.voter}</Tag>,behavior:(_item.behavior==1?"赞成":"反对")})
+                        _userProposalVoteData.push({id:item.id ,voteTime:getDate(_item.voteTime),voter:<Tag icon={<UserOutlined/>} color={_item.voter == account?"blue":(colorGroup[userAddresses.indexOf(_item.voter)%10])}>{_item.voter}</Tag>,behavior:(_item.behavior==1?"赞成":"反对")})
                     })
                 })
                 setUserProposalVoteData(_userProposalVoteData)
@@ -471,16 +490,16 @@ const DSOMWPage = () => {
         }
     }, [proposalsInfo,userInfo.proposalIds])
     useEffect(()=>{
-        if (account !== "" && userInfo.votesInfo) {
+        if (account !== "" && userInfo.votesInfo && proposalsInfo) {
             try {
                 setUserVoteData(userInfo.votesInfo.map((item)=>{
-                    return {behavior:(item.behavior==1?"赞成":"反对"),voteTime:getDate(item.voteTime),proposalIdVotedOn:item.proposalIdVotedOn}
+                    return {behavior:(item.behavior==1?"赞成":"反对"),voteTime:getDate(item.voteTime),proposalIdVotedOn:item.proposalIdVotedOn,content:(proposalsInfo.filter((_item)=>_item.id==item.proposalIdVotedOn).length > 0?proposalsInfo.filter((_item)=>_item.id==item.proposalIdVotedOn)[0].content:"")}
                 }))
             } catch (error: any) {
                 revertOutput(error)
             }
         }
-    }, [userInfo.votesInfo])
+    }, [userInfo.votesInfo,proposalsInfo])
     useEffect(()=>{
         if (account !== "" && userInfo.bonusInfo) {
             try {
@@ -499,20 +518,20 @@ const DSOMWPage = () => {
             dataIndex: 'id',
             key: 'id',
             align: 'center' as 'center',
-            sorter: (a, b) => a.id - b.id,
-            defaultSortOrder: 'descend',
         },
         {
             title: '开始时间',
             dataIndex: 'voteStartTime',
             key: 'voteStartTime',
             align: 'center' as 'center',
+            sorter: (a, b) => Date.parse(a.voteStartTime) - Date.parse(b.voteStartTime),
         },
         {
             title: '截止时间',
             dataIndex: 'voteEndTime',
             key: 'voteEndTime',
             align: 'center' as 'center',
+            sorter: (a, b) => Date.parse(a.voteEndTime) - Date.parse(b.voteEndTime),
         },
         {
             title: '提案内容',
@@ -545,7 +564,53 @@ const DSOMWPage = () => {
             align: 'center' as 'center',
         },
     ];
-    const columnsVote = [
+    const columnsUserProposal: ColumnsType<{ id: number; voteStartTime: string;voteEndTime: string; content: string; votesInfo: JSX.Element; status: JSX.Element; action: JSX.Element; }> = [
+        {
+            title: '编号',
+            dataIndex: 'id',
+            key: 'id',
+            align: 'center' as 'center',
+        },
+        {
+            title: '开始时间',
+            dataIndex: 'voteStartTime',
+            key: 'voteStartTime',
+            align: 'center' as 'center',
+            sorter: (a, b) => Date.parse(a.voteStartTime) - Date.parse(b.voteStartTime),
+        },
+        {
+            title: '截止时间',
+            dataIndex: 'voteEndTime',
+            key: 'voteEndTime',
+            align: 'center' as 'center',
+            sorter: (a, b) => Date.parse(a.voteEndTime) - Date.parse(b.voteEndTime),
+        },
+        {
+            title: '提案内容',
+            dataIndex: 'content',
+            key: 'content',
+            align: 'center' as 'center',
+        },
+        {
+            title: '赞成数/反对数',
+            dataIndex: 'votesInfo',
+            key: 'votesInfo',
+            align: 'center' as 'center',
+        },
+        {
+            title: '提案状态',
+            dataIndex: 'status',
+            key: 'status',
+            align: 'center' as 'center',
+        },
+        {
+            title: '操作',
+            dataIndex: 'action',
+            key: 'action',
+            align: 'center' as 'center',
+        },
+    ];
+    const columnsVote: ColumnsType<{behavior:string,voteTime:string,proposalIdVotedOn:number,content:string}> = [
         {
             title: '投票的提案编号',
             dataIndex: 'proposalIdVotedOn',
@@ -553,10 +618,17 @@ const DSOMWPage = () => {
             align: 'center' as 'center',
         },
         {
+            title: '投票的提案内容',
+            dataIndex: 'content',
+            key: 'content',
+            align: 'center' as 'center',
+        },
+        {
             title: '投票时间',
             dataIndex: 'voteTime',
             key: 'voteTime',
             align: 'center' as 'center',
+            sorter: (a, b) => Date.parse(a.voteTime) - Date.parse(b.voteTime),
         },
         {
             title: '投票行为',
@@ -565,18 +637,13 @@ const DSOMWPage = () => {
             align: 'center' as 'center',
         },
     ];
-    const columnsProposalVote = [
-        {
-            title: '投票的提案编号',
-            dataIndex: 'id',
-            key: 'id',
-            align: 'center' as 'center',
-        },
+    const columnsProposalVote:ColumnsType<{id: number;voteTime:string;voter: JSX.Element;behavior:string;}> = [
         {
             title: '投票时间',
             dataIndex: 'voteTime',
             key: 'voteTime',
             align: 'center' as 'center',
+            sorter: (a, b) => Date.parse(a.voteTime) - Date.parse(b.voteTime),
         },
         {
             title: '投票人',
@@ -591,7 +658,7 @@ const DSOMWPage = () => {
             align: 'center' as 'center',
         },
     ];
-    const columnsBonus = [
+    const columnsBonus :ColumnsType<{id:string,URI:string,awardTime:string}> = [
         {
             title: '纪念品独有编号',
             dataIndex: 'id',
@@ -609,6 +676,7 @@ const DSOMWPage = () => {
             dataIndex: 'awardTime',
             key: 'awardTime',
             align: 'center' as 'center',
+            sorter: (a, b) => Date.parse(a.awardTime) - Date.parse(b.awardTime),
         },
     ];
 
@@ -616,7 +684,12 @@ const DSOMWPage = () => {
         if (allProposalData.length==0) {
             return <Empty/>
         } else {
-            return <Table dataSource={allProposalData} columns={columnsProposal} />
+            return <Table dataSource={allProposalData} columns={columnsProposal} pagination={{
+                hideOnSinglePage: true, // 只有一页时不显示分页
+                pageSize:5,
+                showTotal: () => `共 ${allProposalData.length} 条`, // 显示总共有多少条
+                total: allProposalData.length, // 总共有多少条
+            }}/>
         }
     }
 
@@ -624,7 +697,12 @@ const DSOMWPage = () => {
         if (userProposalData.length==0) {
             return <Empty/>
         } else {
-            return <Table dataSource={userProposalData} columns={columnsProposal} />
+            return <Table dataSource={userProposalData} columns={columnsUserProposal} pagination={{
+                hideOnSinglePage: true, // 只有一页时不显示分页
+                pageSize:5,
+                showTotal: () => `共 ${userProposalData.length} 条`, // 显示总共有多少条
+                total: userProposalData.length, // 总共有多少条
+            }}/>
         }
     }
 
@@ -632,14 +710,25 @@ const DSOMWPage = () => {
         if (userVoteData.length==0) {
             return <Empty/>
         } else {
-            return <Table dataSource={userVoteData} columns={columnsVote} />
+            return <Table dataSource={userVoteData} columns={columnsVote} pagination={{
+                hideOnSinglePage: true, // 只有一页时不显示分页
+                pageSize:5,
+                showTotal: () => `共 ${userVoteData.length} 条`, // 显示总共有多少条
+                total: userVoteData.length, // 总共有多少条
+            }}/>
         }
     }
-    const UserProposalVoteTable = () => {
+
+    const UserProposalVoteTable = (id:{ id: number; }) => {
         if (userProposalVoteData.length==0) {
             return <Empty/>
         } else {
-            return <Table dataSource={userProposalVoteData} columns={columnsProposalVote} />
+            return <Table dataSource={userProposalVoteData.filter((item)=>item.id==id.id)} columns={columnsProposalVote} pagination={{
+                hideOnSinglePage: true, // 只有一页时不显示分页
+                pageSize:5,
+                showTotal: () => `共 ${userProposalVoteData.filter((item)=>item.id==id.id).length} 条`, // 显示总共有多少条
+                total: userProposalVoteData.filter((item)=>item.id==id.id).length, // 总共有多少条
+            }}/>
         }
     }
 
@@ -647,7 +736,12 @@ const DSOMWPage = () => {
         if (userBonusData.length==0) {
             return <Empty/>
         } else {
-            return <Table dataSource={userBonusData} columns={columnsBonus} />
+            return <Table dataSource={userBonusData} columns={columnsBonus} pagination={{
+                hideOnSinglePage: true, // 只有一页时不显示分页
+                pageSize:5,
+                showTotal: () => `共 ${userBonusData.length} 条`, // 显示总共有多少条
+                total: userBonusData.length, // 总共有多少条
+            }}/>
         }
     }
 
@@ -677,6 +771,8 @@ const DSOMWPage = () => {
         getUserInfo()
         getProposalInfo()
     };
+
+
 
     const onOk = (value: RangePickerProps['value']) => {
         if (value == null || value == undefined) {
@@ -722,7 +818,11 @@ const DSOMWPage = () => {
                 <Content style={{ margin: '16px', marginTop:'0px', padding:"16px", backgroundColor:"white", overflow: 'initial' }}>
                     <div className="toolBar" >
                         <Row justify="space-around" align="middle">
-                            <Col span={20}><Button type="primary" size="large" shape="round" icon={<FileAddOutlined />} onClick={showModal}>发起提案</Button></Col>
+                            <Col span={20}>
+                                <Popconfirm title={"提交提案将消耗"+tpConsumedByProposal+" TP。你目前有"+userInfo.balance+" TP。是否确定继续？"} onConfirm={showModal} okText="确定" cancelText="取消" placement="top">
+                                    {account!==""&&<Button type="primary" size="large" shape="round" icon={<FileAddOutlined />} >发起提案</Button>}
+                                </Popconfirm>
+                            </Col>
                         </Row>
                     </div>
                     <Modal
@@ -777,6 +877,21 @@ const DSOMWPage = () => {
         }
     }
 
+    const [open_, setOpen_] = useState(false)
+    const [voteInfoId, setVoteInfoId] = useState(0)
+
+
+    const info = (id:number) => {
+        setOpen_(true)
+        setVoteInfoId(id)
+    };
+
+    const handleCancel_ = () => {
+        setOpen_(false)
+        getUserInfo()
+        getProposalInfo()
+    };
+
     // 用户中心的HTML
     const UserCenter = () => {
         return (
@@ -816,11 +931,27 @@ const DSOMWPage = () => {
                         defaultActiveKey="1"
                         centered
                         items={[{label: (<span><FileTextOutlined /> 我的提案</span>), key: '1', children: <UserProposalTable/>},
-                            {label: (<span><HighlightOutlined /> 我的提案的投票详情</span>), key: '2', children: <UserProposalVoteTable/>},
-                            {label: (<span><HighlightOutlined /> 我的投票</span>), key: '3', children: <UserVoteTable/>},
-                                {label: (<span><GiftOutlined /> 我的纪念品</span>), key: '4', children: <UserBonusTable/>}
+                                {label: (<span><HighlightOutlined /> 我的投票</span>), key: '2', children: <UserVoteTable/>},
+                                {label: (<span><GiftOutlined /> 我的纪念品</span>), key: '3', children: <UserBonusTable/>}
                         ]}
                     />
+                    <Modal
+                        transitionName=""
+                        maskTransitionName=""
+                        open={open_}
+                        title={"提案"+voteInfoId+"的投票详情"}
+                        onCancel={handleCancel_}
+                        width={800}
+                        footer={[
+                            <Button key="ok" type="primary" onClick={handleCancel_}>
+                                确定
+                            </Button>,
+                        ]}
+                    >
+                        {(errorMessage !== "" && open == true) && <Alert type="error" message={errorMessage} banner closable afterClose={()=>setErrorMessage("")} />}
+                        {(successMessage !== "" && open == true) && <Alert type="success" message={successMessage} banner closable afterClose={()=>setSuccessMessage("")} />}
+                        <UserProposalVoteTable id={voteInfoId}/>
+                    </Modal>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>

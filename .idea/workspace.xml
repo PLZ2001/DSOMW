@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="后端solidity代码更进一步完善；前端功能更进一步完善，可以准备美化了">
+    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="前后端基本完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/contracts/DSOMW.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/contracts/DSOMW.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/contracts/MyERC20.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/contracts/MyERC20.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsomw-fronted/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsomw-fronted/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.css" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/pages/DSOMW/DSOMW.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/DSOMW.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/DSOMW.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC20.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC20.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC721.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/abis/MyERC721.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +144,9 @@
       <workItem from="1666788858036" duration="7909000" />
       <workItem from="1666835059312" duration="37871000" />
       <workItem from="1666919642266" duration="3300000" />
-      <workItem from="1666925890491" duration="267000" />
+      <workItem from="1666925890491" duration="1476000" />
+      <workItem from="1666964596135" duration="1581000" />
+      <workItem from="1666967279782" duration="8177000" />
     </task>
     <task id="LOCAL-00001" summary="生成hardhat工程模板">
       <created>1666430140103</created>
@@ -200,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666790058454</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="前后端基本完成">
+      <created>1666926441071</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666926441071</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +281,7 @@
     <MESSAGE value="后端solidity代码基本完善" />
     <MESSAGE value="后端solidity代码基本完善；初步设计简单的前端" />
     <MESSAGE value="后端solidity代码更进一步完善；前端功能更进一步完善，可以准备美化了" />
-    <option name="LAST_COMMIT_MESSAGE" value="后端solidity代码更进一步完善；前端功能更进一步完善，可以准备美化了" />
+    <MESSAGE value="前后端基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="前后端基本完成" />
   </component>
 </project>
