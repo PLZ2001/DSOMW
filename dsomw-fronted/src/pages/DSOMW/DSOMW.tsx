@@ -810,7 +810,7 @@ const DSOMWPage = () => {
                     <br/>
                     <Row justify="space-around" align="middle">
                         <Col span={6}><FileTextOutlined /> <br/>提案总数{proposalsInfo.length}项</Col>
-                        <Col span={6}><FileDoneOutlined /> <br/>提案通过率{proposalsInfo.length==0?0:(proposalsInfo.filter((item)=>item.status===2).length / (proposalsInfo.filter((item)=>item.status===2).length+proposalsInfo.filter((item)=>item.status===1).length) * 100).toFixed(2)}%</Col>
+                        <Col span={6}><FileDoneOutlined /> <br/>提案通过率{proposalsInfo.length==0?0:(proposalsInfo.filter((item)=>item.status===2).length+proposalsInfo.filter((item)=>item.status===1).length)==0?0:(proposalsInfo.filter((item)=>item.status===2).length / (proposalsInfo.filter((item)=>item.status===2).length+proposalsInfo.filter((item)=>item.status===1).length) * 100).toFixed(2)}%</Col>
                         <Col span={6}><TeamOutlined /> <br/>参与总人数{userAddresses.length}人</Col>
                         <Col span={6}><HighlightOutlined /> <br/>有效投票总次数{proposalsInfo.length==0?0:((proposalsInfo.map((item)=>item.votesInfo.length)).map((item,index,array)=>index!=0?array[0]+=item:array[0]+=0)).reverse()[0]}次</Col>
                     </Row>
