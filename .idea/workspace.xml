@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="更新README" />
+    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="更新README">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,6 +173,8 @@
       <workItem from="1667737955903" duration="792000" />
       <workItem from="1667740321659" duration="258000" />
       <workItem from="1667740912834" duration="250000" />
+      <workItem from="1667741590514" duration="133000" />
+      <workItem from="1667746187646" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="生成hardhat工程模板">
       <created>1666430140103</created>
@@ -283,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667741147074</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="更新README">
+      <created>1667741689363</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1667741689363</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
