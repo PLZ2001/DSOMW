@@ -2,7 +2,7 @@
 ## 😀项目简介
 本项目是一个基于智能合约和React前端的去中心化学生社团组织治理网站。用于浙江大学2022-2023学年秋学期《区块链与数字货币》课程大作业。
 <div align="center">
-    <img style="BORDER:#007979 5px solid" decoding="async" src="./imgs/网页主界面1.jpeg" width="70%">
+    <img decoding="async" src="./imgs/网页主界面1.jpeg" width="70%">
     <br/> ”提案中心“首页
 </div>
 <br/>
