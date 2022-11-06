@@ -1,3 +1,2 @@
-cd contracts
+cd dsomw-fronted
 npm install
-cd ..
