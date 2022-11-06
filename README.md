@@ -45,13 +45,7 @@
 
 ### 2. 安装项目依赖
 ```shell
-   npm install
-   cd contracts
-   npm install
-   cd ..
-   cd dsomw-fronted
-   npm install
-   cd ..
+   dsomw-install-package.bat
 ```
 
 
@@ -62,9 +56,7 @@
 
 ### 4. 将智能合约部署到本地区块链
 ```shell
-   cd contracts
-   npx hardhat run ./scripts/deploy.ts --network ganache
-   cd ..
+   dsomw-deploy.bat
 ```
 
 正常情况下终端输出（下文只是举例，具体哈希值因人而异）
@@ -90,8 +82,7 @@
 
 ### 7. 启动网页
 ```shell
-   cd dsomw-fronted
-   npm start
+   dsomw-start.bat
 ```
    * 开始使用网站吧！
 
@@ -507,3 +498,5 @@
         }
     }
 ```
+
+## 

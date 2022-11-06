@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="增加了运行方法">
+    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="更新了详细的README">
+      <change afterPath="$PROJECT_DIR$/dsomw-deploy.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dsomw-install-package.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dsomw-start.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" afterDir="false" />
@@ -65,6 +68,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\文件\Ethereum\区块链与虚拟货币作业\Dapp大作业\DSOMW" />
       <recent name="D:\文件\Ethereum\Dapp大作业\DSOMW\dsomw-fronted\src\utils\abis" />
       <recent name="D:\文件\Ethereum\Dapp大作业\DSOMW\contracts\contracts" />
     </key>
@@ -166,7 +170,9 @@
       <workItem from="1667303279496" duration="50000" />
       <workItem from="1667307075821" duration="1754000" />
       <workItem from="1667477982862" duration="53000" />
-      <workItem from="1667714004581" duration="15507000" />
+      <workItem from="1667714004581" duration="16274000" />
+      <workItem from="1667736423627" duration="304000" />
+      <workItem from="1667737955903" duration="317000" />
     </task>
     <task id="LOCAL-00001" summary="生成hardhat工程模板">
       <created>1666430140103</created>
@@ -238,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667308760638</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="更新了详细的README">
+      <created>1667735384325</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667735384325</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +339,8 @@
     <MESSAGE value="前端增加了提案投票详情的查看" />
     <MESSAGE value="修复了提案通过率的bug" />
     <MESSAGE value="增加了运行方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了运行方法" />
+    <MESSAGE value="更新了详细的README" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了详细的README" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
