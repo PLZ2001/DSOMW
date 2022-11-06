@@ -46,8 +46,10 @@
 ### 2. 安装项目依赖
 ```shell
    dsomw-install-package1.bat
-   dsomw-install-package3.bat
    dsomw-install-package2.bat
+   cd ..
+   dsomw-install-package3.bat
+   cd ..
 ```
 
 
