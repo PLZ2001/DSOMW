@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="更新了详细的README">
-      <change afterPath="$PROJECT_DIR$/dsomw-deploy.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dsomw-install-package.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dsomw-start.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" beforeDir="false" afterPath="$PROJECT_DIR$/dsomw-fronted/src/utils/contract-addresses.json" afterDir="false" />
-    </list>
+    <list default="true" id="7f9afced-915b-4df5-b1c0-02950245ad73" name="变更" comment="更新README" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +22,8 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="true" />
@@ -172,7 +167,7 @@
       <workItem from="1667477982862" duration="53000" />
       <workItem from="1667714004581" duration="16274000" />
       <workItem from="1667736423627" duration="304000" />
-      <workItem from="1667737955903" duration="317000" />
+      <workItem from="1667737955903" duration="691000" />
     </task>
     <task id="LOCAL-00001" summary="生成hardhat工程模板">
       <created>1666430140103</created>
@@ -251,7 +246,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667735384325</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="更新了README">
+      <created>1667738298030</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667738298030</updated>
+    </task>
+    <task id="LOCAL-00013" summary="更新README">
+      <created>1667738638193</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667738638193</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +349,9 @@
     <MESSAGE value="修复了提案通过率的bug" />
     <MESSAGE value="增加了运行方法" />
     <MESSAGE value="更新了详细的README" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了详细的README" />
+    <MESSAGE value="更新了README" />
+    <MESSAGE value="更新README" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新README" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
